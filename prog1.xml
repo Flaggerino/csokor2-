@@ -18,12 +18,12 @@
             Megoldás forrása:                
         </para>
         <para>
-            A Turing gépünk olvas egy decimális számot, jelen esetben a 10-et.
-            Ezek után kivon 1-et a decimális számunk utolsó számjegyéből, majd ezt az 1-est eltárolja.
-            Miután az előző helyiértéken nem 0 áll, az előbb kivont számjegyet átváltja 0-ról 9-re.
-            Mindezek után az átváltott szám előtt álló szám értékéből is kivon 1-et.
-            A fenti lépéseket addig ismétli, míg minden helyiértéken 0-t nem kapunk.
-            Az eltárolt 1-esek sorozata lesz az "unáris (jelen esetben) tízesünk".
+           A turinggép olvas egy számot, ami most 10.
+           Kivon egyet a decimális számunk utolsó számjegyéből majd eltárolja az egyest.
+           Mivel az utolsó helyen nem 0 áll ezért átváltja 0 helyett 9-re.
+           Ezek után az első számjegyből is kivn egy egyest és azt is tárolja.
+           Addig ismétli ezt a feladatsort, míg minden helyi értékben 0-át nem látunk.
+           A tárolt egyesek sorozata lesz a jelen esetben unáris 10-esünk.
             
         </para>
     </section>        
@@ -43,7 +43,7 @@
         </para>
         <para>
             P1XP2 → P1QP2, P1, P2 eleme (VN U VT)*, X VN beli, Q (VN U VT)+ beli, kivéve S → üres, de akkor S nem lehet jobb oldali egyetlen szabályban sem
-            // pontos megértés, saját szavakkal való megfogalmazás szükséges...
+            
         </para>
     </section>        
                 
@@ -61,19 +61,19 @@
             Megoldás forrása:  printf("%d\n", sizeof(char)*8);
         </para>
         <para>
-            A fent látható kódrészlet áll egy azonosítóból, egy karakterláncból, egy állanóból (konstans), illetve kulcsszavakból.
-            Az azonosító a "printf" függvény , mely a kiírásért felelős.
-            A karakterláncunk a ["%d\n"] , mely egy adott kifejezés listából választott kifejezés.
-            Kulcsszavaink pedig a "sizeof" és a "char", ahol a "sizeof" az argumentumának bitméretét tároló kifejezés, a "char" pedig egy karakterláncot reprezentáló kifejezés.
-            Felépítve a következőképp néz ki:
-            Adott egy elsődleges kifejezés (jelen esetben a "printf"), melynek argumentuma egy kifejezés lista.
-            Tovább bontva a (printf-beli)kifejezés listát, kapunk ismételten egy kifejezés listát ("%d\n"), illetve egy kifejezést.
-            Az imént említett kifejezésünk tovább bontható "sizeof(kifejezés)"-re.
+            A kódrészlet áll konstansból, karakterláncból, azonosítóból és kulcsszavakból.
+            A printf függvény az azonosítónk mely a kiírásért felel.
+            A karakterlánc a %d.
+            A kulcsszavak a : "sizeof"  "char". "sizeof" tárolja az argumentumának a bitméretét. A "char" pedig karakterláncot fejez ki.
+            Így nézhet ki:
+            Van egy kifejezés ami most printf, mely argumentumakémt egy kifejezéslista szolgál.
+            A printf-et tovább bontva, kapunk kifejezéslistát és még egy kifejezést.
+            Az új kifejezésünk tovább bontható erre: sizeof(kifejezés).
             Tehát a fent leírt "printf" a következőképp áll elő:
-            Elsődleges kifejezés = /kifejezés lista/, /kifejezés/, /állandó/.
-            /kifejezés lista/ = /kifejezés/
-            /kifejezés/ = sizeof(kifejezés)
-            /állandó/ = 8
+            Elsődleges kifejezés: lista, kifejezés, konstans.
+            kif. lista: adott kifejezés
+            legkisebb kifejezés: sizeof(kifejezés)
+            konstans: 8
             
         </para>
     </section>                     
@@ -109,11 +109,10 @@ main ()
  
         </para>
         <para>
-            A programunk elején deklarált "realnumbers" változó után megszabjuk,
-            hogy az olvasott számjegyek 0-9-ig vehetnek fel értéket.
-            Ezek után a lexerünk következik, mely eldönti ({digit}*(\.{digit}+)? )-t alkalmazva, 
-            hogy az olvasott szám valós szám avagy sem. Amennyiben valós számot olvasott, növeli 1-gyel a "realnumbers"-t.
-            Majd a mainben meghívjuk a lexerünket, illetve kiíratjuk az olvasott valós számok számát.
+            Deklarálunk egy real_numbers változót, ez megszabja, hogy a számjegyeink 0 és 9 között vehetnek fel értéket.
+            Ezek után a lexerünk eldönti ({digit}*(\.{digit}+)? )-t alkalmazva, 
+            hogy valós-e az adott szám. Ha valós a szám a real_numbers értéke nő 1-gyel.
+            A mainben meghívjuk a lexert és kiíratjuk a valós számok számát.
         </para>
     </section>                     
 
@@ -248,12 +247,11 @@ main()
 
         </para>
         <para>
-            A program egy megadott leet táblázat alapján cserél ki adott karaktereket, a megfelelő leetekkel.
-            Ebben a programban minden karakterhez 4 leet tartozik, ezt egy tömbbel reprezentáljuk, melyre később egyszerűbb lesz hivatkozni.
-            Egy olvasott tetszőleges karakter 4 lehetséges helyettesítési "leet-karaktere" közül, mi kerüljön kiírásra?
-            Ezért az "r" nevű változónk lesz felelős.
-            Generál egy random számot 0-100 között minden karakternél, majd felveszi ezt az értéket.
-            A felvett értéktől függően helyettesíti be az olvasott karakter helyére a leet[0] , leet[1], leet[2], vagy a leet[3] elemet.
+            Egy leet táblázat alapjhán kicserélünk karaktereket leetekre.
+            Minden karakterhez 4 leetet fűzünk, ezt tömbökbe osztjuk, azért hogy könnyebben tudjunk hivatkozni ezekre.
+            Az r változó eldönti, hogy a karakter 4 lett értéke közül melyik kerüljön kiírásra.
+            Generál egy számot 0 és 100 között véletlenszerűen és ezt az értéket veszi fel.
+            Az értéktől függően kapjuk a leet[0], leet[1], leet[2] vagy leet[3] értéket.
 
 
         </para>
