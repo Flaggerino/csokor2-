@@ -24,7 +24,7 @@
            Ezek után az első számjegyből is kivn egy egyest és azt is tárolja.
            Addig ismétli ezt a feladatsort, míg minden helyi értékben 0-át nem látunk.
            A tárolt egyesek sorozata lesz a jelen esetben unáris 10-esünk.
-            
+            Tutor: Rémiás Dávidot
         </para>
     </section>        
         
@@ -74,7 +74,7 @@
             kif. lista: adott kifejezés
             legkisebb kifejezés: sizeof(kifejezés)
             konstans: 8
-            
+            Tutor: Rémiás Dávid
         </para>
     </section>                     
 
@@ -252,7 +252,7 @@ main()
             Az r változó eldönti, hogy a karakter 4 lett értéke közül melyik kerüljön kiírásra.
             Generál egy számot 0 és 100 között véletlenszerűen és ezt az értéket veszi fel.
             Az értéktől függően kapjuk a leet[0], leet[1], leet[2] vagy leet[3] értéket.
-
+	    Tutor: Rémiás Dávid
 
         </para>
     </section>                     
@@ -457,6 +457,7 @@ int (*i(*v (int e))) (int f, int g);
             int (*v(int c)) (int a, int b); = egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet kapó függvény
             int (*(*z) (int)) (int, int); = függvénymutató egy egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet
                                             kapó függvényre ( az "int"-ek után hiányzik az elnevezés)
+		Tutor: Rémiás Dávid
         </para>
     </section>                     
 
