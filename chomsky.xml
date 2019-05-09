@@ -438,6 +438,7 @@ $(\exists y \forall x (y<x) \supset \neg (x \text{ prím}))$
         </para>
         <para>
             Megoldás forrása:  
+		<programlisting><![CDATA[
 int a;
 int *b = &a;
 int &r =a;
@@ -462,6 +463,7 @@ int (*i(*v (int e))) (int f, int g);
             int (*(*z) (int)) (int, int); = függvénymutató egy egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet
                                             kapó függvényre ( az "int"-ek után hiányzik az elnevezés)
 		Tutor: Rémiás Dávid
+		]]></programlisting>
         </para>
     </section>                     
 
